@@ -8,14 +8,14 @@ pipeline {
             }
         }
 
-       stage('Build & Deploy with Docker Compose') {
+     stage('Build & Deploy with Docker Compose') {
     steps {
         sh '''
-          docker-compose down --remove-orphans
-          docker-compose up -d --build
+          docker-compose -p mern-cicd down --remove-orphans
+          docker-compose -p mern-cicd up -d --build
         '''
+
     }
 }
-    }
-}
+    
 
