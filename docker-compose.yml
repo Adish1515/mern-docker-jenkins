@@ -2,22 +2,34 @@ services:
   backend:
     build:
       context: ./backend
+<<<<<<< HEAD
       dockerfile: Dockerfile
+=======
+>>>>>>> 74d3c00 (Fix docker-compose build context for frontend and backend)
     container_name: mern-backend
     ports:
       - "5000:5000"
     restart: always
+    ports:
+      - "5000:5000"
 
   frontend:
     build:
       context: ./frontend
+<<<<<<< HEAD
       dockerfile: Dockerfile
+=======
+>>>>>>> 74d3c00 (Fix docker-compose build context for frontend and backend)
     container_name: mern-frontend
     ports:
       - "3000:80"
     depends_on:
       - backend
     restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
 
   nginx:
     image: nginx:latest
